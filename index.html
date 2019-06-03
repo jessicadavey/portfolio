@@ -51,6 +51,12 @@
 			color: var(--body-text-color);
 		}
 
+		.mode-switch-text {
+			font-family: 'PT Sans', sans-serif;
+			color: var(--body-text-color);
+			font-size: 0.7rem;
+		}
+
 		h1 {
 			font-size: 4rem;
 		}
@@ -104,6 +110,7 @@
 <body>
 
 	<header>
+		<p class="mode-switch-text"><a id="mode">Light Mode</a></p>
 
 		<div id="title">
 
@@ -148,6 +155,31 @@
 		</div>
 
 	</main>
+	<script>
+		let isDark = true;
+
+		function setMode() {
+			if (!isDark) {
+				document.documentElement.style.setProperty("--main-bg-color", "#F5F5F5");
+				document.documentElement.style.setProperty("--body-text-color", "#010001");
+				document.documentElement.style.setProperty("--link-color", "#A81A7B");
+				document.getElementById("mode").innerHTML = "Dark Mode";
+			}
+
+			if (isDark) {
+				document.documentElement.style.setProperty("--main-bg-color", "#010001");
+				document.documentElement.style.setProperty("--body-text-color", "#FFFFFC");
+				document.documentElement.style.setProperty("--link-color", "#FF4FC7");
+				document.getElementById("mode").innerHTML = "Light Mode";
+			}
+
+		}
+
+		document.getElementById("mode").onclick = function () {
+			isDark = !isDark;
+			setMode();
+		}
+	</script>
 
 </body>
 
