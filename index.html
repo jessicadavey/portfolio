@@ -11,6 +11,18 @@
 	<link href="https://fonts.googleapis.com/css?family=PT+Mono|PT+Sans&display=swap" rel="stylesheet">
 
 	<style type="text/css">
+		:root {
+
+			--main-bg-color: #010001;
+			--title-text-color: #00a878;
+			--title-text-underline: #97ff21;
+			--body-text-color: #FFFFFC;
+			--link-color: #FF4FC7;
+			--link-hover-color: #00a878;
+			--link-hover-underline: #97ff21;
+
+		}
+
 		body {
 			background: #010001;
 		}
@@ -50,6 +62,12 @@
 		a {
 			color: #FF4FC7;
 			text-decoration: none;
+		}
+
+		a:hover {
+			color: var(--link-hover-color);
+			text-decoration: underline;
+			text-decoration-color: #97ff21
 		}
 
 		ul {
